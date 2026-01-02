@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 40px;
+  overflow-x: hidden;
+
+  /* Classy Cinematic Dark Vibe */
+  background: 
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), /* dark overlay for text */
+    url('https://images.unsplash.com/photo-1601758123927-0dcbf65b7b5e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+
+  background-blend-mode: overlay; /* makes overlay blend nicely */
+}
+
+
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 80px;
+  letter-spacing: 8px;
+  font-family: "Playfair Display", serif;
+}
+
+.hero h1.glow {
+  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #9c27b0;
+}
+
+.hero p {
+  color: #aaa;
+  letter-spacing: 4px;
+  margin-top: 10px;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  transition: 0.6s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(60%);
+  transition: 0.6s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:hover img {
+  filter: grayscale(0%) brightness(1.2);
+}
+
+/* Quotes, Cats, Healing, Secret */
+.quotes, .cats, .healing, .secret {
+  text-align: center;
+  max-width: 700px;
+  margin: 80px auto;
+  color: #ccc;
+  line-height: 1.8;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cats gallery */
+.cat-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cat-gallery img {
+  width: 300px;
+  border-radius: 20px;
+  filter: grayscale(50%);
+  transition: 0.6s;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+}
+
+.cat-gallery img:hover {
+  filter: grayscale(0%) brightness(1.2);
+  transform: scale(1.05);
+}
+
+/* Secret message */
+.secret span {
+  display: block;
+  margin-top: 20px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Fade in animation */
+.fadeIn {
+  opacity: 0;
+  animation: softEnter 2s ease forwards;
+}
+
+.fadeIn:nth-child(1) { animation-delay: 0.5s; }
+.fadeIn:nth-child(2) { animation-delay: 1s; }
+.fadeIn:nth-child(3) { animation-delay: 1.5s; }
+.fadeIn:nth-child(4) { animation-delay: 2s; }
+.fadeIn:nth-child(5) { animation-delay: 2.5s; }
+
+@keyframes softEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.notes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 80px 0;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  background: rgba(0, 0, 0, 0.6); /* glass effect */
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px); /* adds classy frosted glass effect */
+  transition: transform 0.6s, box-shadow 0.6s;
+  overflow: hidden;
+}
+
+.note-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+}
+
+.note-card img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  transition: transform 0.6s, filter 0.6s;
+}
+
+.note-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.note-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.note-text h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 15px #9c27b0;
+}
+
+.note-text p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.notes-section {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+.final-note-section {
+  position: relative;
+  min-height: 400px;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+  padding: 40px;
+}
+
+.final-note h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  text-shadow: 0 0 15px #9c27b0, 0 0 30px #7b1fa2;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInFinal 2s forwards;
+}
+
+.final-note p {
+  font-size: 18px;
+  color: #ccc;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInFinal 2s 1s forwards;
+}
+
+@keyframes fadeInFinal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,51 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 2s ease;
+}
+
+.intro-box {
+  text-align: center;
+  color: white;
+  animation: rise 2s ease;
+}
+
+.intro-box h1 {
+  font-size: 70px;
+  letter-spacing: 10px;
+}
+
+.intro-box p {
+  color: #888;
+  margin: 20px 0;
+}
+
+.intro-box button {
+  background: transparent;
+  border: 1px solid white;
+  padding: 12px 40px;
+  color: white;
+  letter-spacing: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.intro-box button:hover {
+  background: white;
+  color: black;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rise {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
