@@ -6,249 +6,193 @@
   box-sizing: border-box;
 }
 
+/* ========== BODY ========== */
 .page {
-  position: relative;
   min-height: 100vh;
-  color: white;
   font-family: "Poppins", sans-serif;
-  padding: 40px;
+  color: white;
+  padding: 20px;
+
+  background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80")
+    center / cover no-repeat;
+
   overflow-x: hidden;
-
-  /* Classy Cinematic Dark Vibe */
-  background: 
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), /* dark overlay for text */
-    url('https://images.unsplash.com/photo-1601758123927-0dcbf65b7b5e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-
-  background-blend-mode: overlay; /* makes overlay blend nicely */
 }
 
-
-
-@keyframes moveStars {
-  from { background-position: 0 0; }
-  to { background-position: 1000px 1000px; }
-}
-
-/* Hero section */
+/* ========== HERO ========== */
 .hero {
   text-align: center;
-  margin-bottom: 60px;
+  padding: 60px 10px 40px;
 }
 
 .hero h1 {
-  font-size: 80px;
-  letter-spacing: 8px;
   font-family: "Playfair Display", serif;
-}
-
-.hero h1.glow {
-  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #9c27b0;
+  font-size: 42px;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #9c27b0;
 }
 
 .hero p {
   color: #aaa;
-  letter-spacing: 4px;
-  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 3px;
 }
 
-/* Gallery */
+/* ========== GALLERY ========== */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px 0;
 }
 
 .card {
+  border-radius: 18px;
   overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-  transition: 0.6s;
+  box-shadow: 0 10px 40px rgba(0,0,0,.8);
 }
 
 .card img {
   width: 100%;
-  height: 100%;
+  height: 220px;
   object-fit: cover;
   filter: grayscale(60%);
-  transition: 0.6s;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card:hover img {
-  filter: grayscale(0%) brightness(1.2);
-}
-
-/* Quotes, Cats, Healing, Secret */
-.quotes, .cats, .healing, .secret {
+/* ========== QUOTES ========== */
+.quotes {
   text-align: center;
-  max-width: 700px;
-  margin: 80px auto;
+  margin: 60px 0;
   color: #ccc;
+  font-size: 15px;
   line-height: 1.8;
-  font-size: 18px;
-  position: relative;
-  z-index: 1;
 }
 
-/* Cats gallery */
+/* ========== CATS ========== */
+.cats {
+  text-align: center;
+  margin: 70px 0;
+}
+
+.cats h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.cats p {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
 .cat-gallery {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .cat-gallery img {
-  width: 300px;
-  border-radius: 20px;
-  filter: grayscale(50%);
-  transition: 0.6s;
-  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 0 30px rgba(0,0,0,.8);
 }
 
-.cat-gallery img:hover {
-  filter: grayscale(0%) brightness(1.2);
-  transform: scale(1.05);
+/* ========== HEALING TEXT ========== */
+.healing {
+  text-align: center;
+  margin: 70px 10px;
+  color: #bbb;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
-/* Secret message */
-.secret span {
-  display: block;
-  margin-top: 20px;
-  color: #555;
+/* ========== SECRET NOTE ========== */
+.secret {
+  text-align: center;
+  margin: 80px 10px;
+  color: #999;
   font-style: italic;
 }
 
-/* Fade in animation */
-.fadeIn {
-  opacity: 0;
-  animation: softEnter 2s ease forwards;
+.secret span {
+  display: block;
+  margin-top: 20px;
+  color: #666;
 }
 
-.fadeIn:nth-child(1) { animation-delay: 0.5s; }
-.fadeIn:nth-child(2) { animation-delay: 1s; }
-.fadeIn:nth-child(3) { animation-delay: 1.5s; }
-.fadeIn:nth-child(4) { animation-delay: 2s; }
-.fadeIn:nth-child(5) { animation-delay: 2.5s; }
-
-@keyframes softEnter {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* ========== SCROLL NOTES (STORY STYLE) ========== */
 .notes-section {
   display: flex;
-  flex-direction: column;
-  gap: 60px;
-  margin: 80px 0;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 30px 0;
 }
 
 .note-card {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  background: rgba(0, 0, 0, 0.6); /* glass effect */
+  min-width: 280px;
+  background: rgba(0,0,0,.65);
   border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px); /* adds classy frosted glass effect */
-  transition: transform 0.6s, box-shadow 0.6s;
-  overflow: hidden;
-}
-
-.note-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.8);
+  scroll-snap-align: center;
 }
 
 .note-card img {
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: 160px;
   object-fit: cover;
   border-radius: 15px;
-  flex-shrink: 0;
-  transition: transform 0.6s, filter 0.6s;
-}
-
-.note-card:hover img {
-  transform: scale(1.05);
-  filter: brightness(1.2);
-}
-
-.note-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .note-text h3 {
   font-family: "Playfair Display", serif;
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 0 15px #9c27b0;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 6px;
+  text-shadow: 0 0 10px #9c27b0;
 }
 
 .note-text p {
   color: #ccc;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
 }
-.notes-section {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 40px;
-  padding-bottom: 40px;
-}
+
+/* ========== FINAL CINEMATIC NOTE ========== */
 .final-note-section {
-  position: relative;
-  min-height: 400px;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100px;
+  margin-top: 80px;
+  padding: 40px 20px;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
-  padding: 40px;
+
+  background:
+    linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1950&q=80")
+    center / cover no-repeat;
+}
+
+.final-note {
+  text-align: center;
 }
 
 .final-note h2 {
   font-family: "Playfair Display", serif;
-  font-size: 36px;
-  color: #fff;
-  text-align: center;
-  max-width: 800px;
-  text-shadow: 0 0 15px #9c27b0, 0 0 30px #7b1fa2;
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeInFinal 2s forwards;
+  font-size: 22px;
+  text-shadow: 0 0 15px #9c27b0;
+  margin-bottom: 10px;
 }
 
 .final-note p {
-  font-size: 18px;
-  color: #ccc;
-  text-align: center;
-  opacity: 0;
-  animation: fadeInFinal 2s 1s forwards;
+  color: #aaa;
+  font-size: 14px;
 }
-
-@keyframes fadeInFinal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.final-note span {
+  display: block;
+  margin-top: 15px;
+  color: #777;
+  font-size: 12px;
 }
